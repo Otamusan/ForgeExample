@@ -7,12 +7,13 @@ import net.minecraftforge.fml.common.Mod;
 
 //イベントとして呼び出してほしいメソッドがクラス内に存在することを示すアノテーション
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Items {
+public class TestItems {
     //今回作成したいItemのインスタンス
     public static ItemTest itemTest;
 
     //ベントとして呼び出してほしいメソッドであることを示すアノテーション
     //このアノテーションを付けるとForge側が起動時に自動でこのメソッドを見つけ出し、勝手にイベントとして登録してくれる。
+    //またどのイベントとして呼び出されるかは引数registerの型によって決定される。
     @SubscribeEvent
     public static void onItemsRegistry(RegistryEvent.Register<Item> register) {
         //ItemTestのインスタンスを生成。
